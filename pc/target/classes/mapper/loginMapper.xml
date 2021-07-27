@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pc.mapper.LoginMapper">
+
+    <select id="selectUser" resultType="Auth" parameterType="String">
+        SELECT *
+        FROM USER
+        WHERE USER_ID = #{userName}
+    </select>
+
+    <update id="successCnt" parameterType="String">
+        UPDATE USER
+        SET failCnt = 0
+        WHERE USER_ID = #{userName}
+    </update>
+
+    <select id="selectFailCnt" resultType="int" parameterType="String">
+        SELECT failCnt
+        FROM USER
+        WHERE USER_ID = #{userId}
+    </select>
+
+
+    <update id="failCnt" parameterType="String">
+        UPDATE USER SET failCnt = failCnt + 1 WHERE USER_ID = #{userId}
+    </update>
+</mapper>

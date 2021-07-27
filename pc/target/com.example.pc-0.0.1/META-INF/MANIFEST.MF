@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: user
+Build-Jdk: 1.8.0_241
+Implementation-Title: PC
+Implementation-Version: 0.0.1
+Implementation-Vendor-Id: org.example
+Main-Class: ${start-class}
+

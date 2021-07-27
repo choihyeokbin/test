@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인 페이지</title>
+</head>
+<script th:inline="javascript">
+  var message = [[ ${test} ]];
+
+  if(message != null){
+    alert(message);
+  }
+</script>
+
+<body>
+<h1>로그인</h1>
+<hr>
+<form th:action="@{/login}" method="post">
+  <input type="text" name="userId" placeholder="account를 입력해주세요.">
+  <input type="password" name="userPw" placeholder="password를 입력해주세요.">
+  <button type="submit">로그인</button>
+</form>
+</body>
+</html>
